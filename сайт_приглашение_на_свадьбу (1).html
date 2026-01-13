@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Свадебное приглашение — Дамир и Элина</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(180deg, #fff 0%, #f3eadf 100%);
+      color: #3a3a3a;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 44px;
+      letter-spacing: 3px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+    h2 {
+      font-size: 28px;
+      margin-top: 50px;
+      opacity: 0;
+      animation: fadeInUp 2s ease forwards;
+      animation-delay: 0.5s;
+    }
+    .names {
+      font-size: 40px;
+      margin: 30px 0;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeInUp 2s ease forwards;
+      animation-delay: 0.8s;
+    }
+    .date {
+      font-size: 22px;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeInUp 2s ease forwards;
+      animation-delay: 1.1s;
+    }
+    .divider {
+      width: 140px;
+      height: 2px;
+      background: #c7b199;
+      margin: 35px auto;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1.4s;
+    }
+    .details {
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeInUp 2s ease forwards;
+      animation-delay: 1.6s;
+    }
+    .photo {
+      margin: 50px auto;
+      max-width: 420px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      opacity: 0;
+      animation: fadeIn 2.5s ease forwards;
+      animation-delay: 0.6s;
+    }
+    .photo img {
+      width: 100%;
+      display: block;
+    }
+    iframe {
+      width: 100%;
+      height: 320px;
+      border: none;
+      border-radius: 14px;
+      margin-top: 20px;
+    }
+    form {
+      margin-top: 40px;
+      background: rgba(255,255,255,0.6);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    input, select, button {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #c7b199;
+      font-family: 'Georgia', serif;
+    }
+    button {
+      background: #c7b199;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #b59f86;
+    }
+    .footer {
+      margin-top: 70px;
+      font-size: 17px;
+      color: #777;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 2s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 34px; }
+      .names { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Приглашение на свадьбу</h1>
+    <div class="divider"></div>
+
+    <p class="details">
+      С огромной радостью и теплотой в сердце приглашаем вас разделить с нами
+      один из самых светлых и счастливых дней нашей жизни.
+    </p>
+
+    <div class="names">Дамир & Элина</div>
+    <div class="date">7 августа 2026 года</div>
+
+    <div class="photo">
+      <img src="/mnt/data/ba4d9386-22d3-43fc-b50b-9b7c19317848.png" alt="Дамир и Элина" />
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Программа дня</h2>
+    <p style="font-size:40px;margin-bottom:10px;">💍 ✨ 🍾</p>
+    <p class="details">
+      <span style="font-size:26px;">💍</span><br /><strong>11:00</strong><br />
+      Регистрация брака<br />
+      Дворец бракосочетания<br />
+      г. Саратов, ул. Некрасова, 25/22
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="details">
+      <span style="font-size:26px;">🥂</span><br /><strong>14:00</strong><br />
+      Банкет<br />
+      Ресторан «Счастье»<br />
+      г. Саратов, ул. Крайняя, 129/4
+    </p>
+
+    <iframe src="https://yandex.ru/map-widget/v1/?text=Саратов%20ресторан%20Счастье%20Крайняя%20129%2F4"></iframe>
+
+    <div class="divider"></div>
+
+    <h2>Подтвердите присутствие</h2>
+    <p style="font-size:36px;">✉️ 🤍</p>
+    <form>
+      <input type="text" placeholder="Ваше имя и фамилия" required />
+      <select required>
+        <option value="">Вы сможете присутствовать?</option>
+        <option>Да, с радостью приду</option>
+        <option>К сожалению, не смогу</option>
+      </select>
+      <button type="submit">Отправить ответ</button>
+    </form>
+
+    <div class="footer">
+      Будем бесконечно счастливы видеть вас в этот особенный день 🤍<br /><br />
+      С любовью,<br />
+      Дамир и Элина
+    </div>
+  </div>
+</body>
+</html>
