@@ -4,15 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Свадебное приглашение — Дамир и Элина</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(180deg, #fff 0%, #f3eadf 100%);
       color: #3a3a3a;
       text-align: center;
       overflow-x: hidden;
+      position: relative;
+      padding: 0 50px;
     }
+
+    /* Боковые полоски */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      z-index: -1;
+    }
+    body::before {
+      left: 0;
+      background: linear-gradient(to bottom, #FFC0CB, #FF69B4);
+    }
+    body::after {
+      right: 0;
+      background: linear-gradient(to bottom, #ADD8E6, #1E90FF);
+    }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -34,7 +59,7 @@
     .names {
       font-size: 40px;
       margin: 30px 0;
-      font-weight: bold;
+      font-weight: 600;
       opacity: 0;
       animation: fadeInUp 2s ease forwards;
       animation-delay: 0.8s;
@@ -87,19 +112,19 @@
     }
     form {
       margin-top: 40px;
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.8);
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
-    input, select, button {
+    input, select, button, textarea {
       width: 100%;
       padding: 14px;
       margin: 10px 0;
       font-size: 16px;
       border-radius: 10px;
       border: 1px solid #c7b199;
-      font-family: 'Georgia', serif;
+      font-family: 'Poppins', sans-serif;
     }
     button {
       background: #c7b199;
@@ -107,6 +132,7 @@
       border: none;
       cursor: pointer;
       transition: background 0.3s;
+      font-weight: 600;
     }
     button:hover {
       background: #b59f86;
@@ -119,6 +145,7 @@
       animation: fadeIn 2s ease forwards;
       animation-delay: 2s;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -127,6 +154,7 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @media (max-width: 600px) {
       h1 { font-size: 34px; }
       .names { font-size: 30px; }
@@ -176,13 +204,14 @@
 
     <h2>Подтвердите присутствие</h2>
     <p style="font-size:36px;">✉️ 🤍</p>
-    <form>
-      <input type="text" placeholder="Ваше имя и фамилия" required />
-      <select required>
+    <form action="https://formspree.io/f/xdaaoyov" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя и фамилия" required />
+      <select name="attendance" required>
         <option value="">Вы сможете присутствовать?</option>
         <option>Да, с радостью приду</option>
         <option>К сожалению, не смогу</option>
       </select>
+      <textarea name="message" placeholder="Комментарий (по желанию)"></textarea>
       <button type="submit">Отправить ответ</button>
     </form>
 
